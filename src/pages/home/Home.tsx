@@ -5,7 +5,7 @@ function Home(){
     return(
         <>
             <h1 className="title ">Home</h1>
-            <img className="img" src="" alt="" />
+            <img className="img" src="https://i.imgur.com/H88yIo2.png" alt="Imagem tela inicial" />
         </>
     );
 }
