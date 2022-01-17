@@ -1,7 +1,6 @@
 import React from "react";
 import "./Home.css";
-import { Grid, Paper, Box, Button, Typography } from "@material-ui/core";
-
+import { Grid, Paper, Box, Button, Typography} from "@material-ui/core";
 
 function Home() {
   return (
@@ -14,7 +13,7 @@ function Home() {
         style={{ backgroundColor: "#860038" }}
       >
         <Grid alignItems="center" item xs={6}>
-          <Box paddingX={20}>
+          <Box paddingX={20} >
             <Typography
               variant="h3"
               gutterBottom
@@ -39,11 +38,12 @@ function Home() {
           <Box display="flex" justifyContent="center">
             <Box marginRight={1}></Box>
             <Button
-              variant="outlined"
+              variant="contained"
               style={{
                 borderColor: "white",
                 backgroundColor: "#FDBB30",
                 color: "black",
+
               }}
             >
               Ver Postagens

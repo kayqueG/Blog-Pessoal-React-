@@ -13,7 +13,7 @@ function Footer(){
                             <Typography variant="h5" align="center" gutterBottom style={{ color: "black" }}>Siga-nos nas redes sociais </Typography>
                         </Box>
                         <Box display="flex" alignItems="center" justifyContent="center">
-                            <a href="https://www.github.com" target="_blank">
+                            <a href="https://www.github.com/kayqueG" target="_blank">
                                 <GitHub style={{ fontSize: 60, color: "black" }} />
                             </a>
                             <a href="https://www.linkedin.com" target="_blank">
