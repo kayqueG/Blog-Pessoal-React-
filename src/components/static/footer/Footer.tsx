@@ -1,6 +1,7 @@
 import React from "react";
 import { AppBar, Toolbar, Typography, Box, Grid } from "@material-ui/core";
 import { GitHub, LinkedIn } from "@material-ui/icons";
+import "./Footer.css";
 
 function Footer() {
   return (
@@ -12,7 +13,7 @@ function Footer() {
         alignItems="center"
       >
         <Grid alignItems="center" item xs={12}>
-          <Box style={{ backgroundColor: "#FDBB30", height: "120px" }}>
+          <Box className="box1">
             <Box
               paddingTop={1}
               display="flex"
@@ -23,27 +24,27 @@ function Footer() {
                 variant="h5"
                 align="center"
                 gutterBottom
-                style={{ color: "black" }}
+                className="text"
               >
-                Siga-nos nas redes sociais{" "}
+                Siga-nos nas redes sociais
               </Typography>
             </Box>
             <Box display="flex" alignItems="center" justifyContent="center">
               <a href="https://www.github.com/kayqueG" target="_blank">
-                <GitHub style={{ fontSize: 60, color: "black" }} />
+                <GitHub className="net" />
               </a>
               <a href="https://www.linkedin.com" target="_blank">
-                <LinkedIn style={{ fontSize: 60, color: "black" }} />
+                <LinkedIn  className="net" />
               </a>
             </Box>
           </Box>
-          <Box style={{ backgroundColor: "#FDBB30", height: "60px" }}>
+          <Box className="box2">
             <Box paddingTop={1}>
               <Typography
                 variant="subtitle2"
                 align="center"
                 gutterBottom
-                style={{ color: "black" }}
+               className="text"
               >
                 © 2022 Copyright:
               </Typography>
@@ -53,7 +54,7 @@ function Footer() {
                 <Typography
                   variant="subtitle2"
                   gutterBottom
-                  style={{ color: "black" }}
+                className="text"
                   align="center"
                 >
                   Kayque Gonçalves
