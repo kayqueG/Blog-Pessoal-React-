@@ -22,7 +22,7 @@ function Home() {
               align="center"
               style={{ color: "black", fontWeight: "bold" }}
             >
-              Seja bem vinde!
+              Seja bem vindo(a)!!
             </Typography>
             <Typography
               variant="h5"
