@@ -1,10 +1,11 @@
 import React from "react";
 import "./Home.css";
-import { Grid, Paper, Box, Button, Typography} from "@material-ui/core";
+import { Grid, Paper, Box, Button, Typography } from "@material-ui/core";
+import Cards from "../../components/cards/Cards";
 
 function Home() {
   return (
-   
+    <>
       <Grid
         container
         direction="row"
@@ -36,28 +37,18 @@ function Home() {
             </Typography>
           </Box>
           <Box display="flex" justifyContent="center">
-            <Box marginRight={1}>
-
-            </Box>
-            <Button
-            variant="contained"
-              className="button"
-            >
+            <Box marginRight={1}></Box>
+            <Button variant="contained" className="button">
               Ver Postagens
             </Button>
           </Box>
         </Grid>
         <Grid item xs={5}>
-          <img
-            src="https://imgur.com/5tfOCds.png"
-            alt="Lebron James"
-          />
+          <img src="https://imgur.com/5tfOCds.png" alt="Lebron James" />
         </Grid>
-        <Grid xs={12} className="posts">
-            
-        </Grid>
+        <Grid xs={12} className="posts"></Grid>
       </Grid>
-
+    </>
   );
 }
 

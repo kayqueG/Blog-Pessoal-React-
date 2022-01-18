@@ -2,10 +2,12 @@ import React from "react";
 import { Grid, Box, Typography, TextField, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import "./Login.css";
+import "../home/Home.css";
 
 function Login() {
   return (
     <Grid container direction="row" justifyContent="center" alignItems="center">
+      <Grid style={{ backgroundColor: "blue" }}></Grid>
       <Grid xs={6} alignItems="center">
         <Box paddingX={20}>
           <form action="">
@@ -38,7 +40,7 @@ function Login() {
             />
             <Box marginTop={2} textAlign="center">
               <Link to="/home" className="text-decorator-none">
-                <Button type="submit" variant="contained" color="primary">
+                <Button type="submit" variant="contained" className="button">
                   Logar
                 </Button>
               </Link>
@@ -61,10 +63,7 @@ function Login() {
           </Box>
         </Box>
       </Grid>
-      <Grid
-        xs={6}
-        className="img"
-      ></Grid>
+      <Grid xs={6} className="img"></Grid>
     </Grid>
   );
 }

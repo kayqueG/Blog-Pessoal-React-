@@ -34,7 +34,7 @@ function Footer() {
                 <GitHub className="net" />
               </a>
               <a href="https://www.linkedin.com" target="_blank">
-                <LinkedIn  className="net" />
+                <LinkedIn className="net" />
               </a>
             </Box>
           </Box>
@@ -44,7 +44,7 @@ function Footer() {
                 variant="subtitle2"
                 align="center"
                 gutterBottom
-               className="text"
+                className="text"
               >
                 © 2022 Copyright:
               </Typography>
@@ -54,7 +54,7 @@ function Footer() {
                 <Typography
                   variant="subtitle2"
                   gutterBottom
-                className="text"
+                  className="text"
                   align="center"
                 >
                   Kayque Gonçalves
