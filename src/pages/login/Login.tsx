@@ -1,15 +1,22 @@
-import React from "react";
+import React,{useState}  from "react";
 import { Grid, Box, Typography, TextField, Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import "./Login.css";
-import "../home/Home.css";
+import UserLogin from "../../models/UserLogin";
 
 function Login() {
+
+    const [userLogin,setUserLogin]=useState<UserLogin>({
+      id:0,
+      usuario: "",
+      senha: "" ,
+      token: ""
+    })
+
   return (
     <Grid container direction="row" justifyContent="center" alignItems="center">
-      <Grid style={{ backgroundColor: "blue" }}></Grid>
       <Grid xs={6} alignItems="center">
-        <Box paddingX={20}>
+        <Box paddingX={10}>
           <form action="">
             <Typography
               variant="h3"
@@ -52,6 +59,7 @@ function Login() {
                 Não tem uma conta?
               </Typography>
             </Box>
+            <Link to="/cadastrousuario">
             <Typography
               variant="subtitle1"
               gutterBottom
@@ -60,6 +68,8 @@ function Login() {
             >
               Cadastre-se
             </Typography>
+            </Link>
+           
           </Box>
         </Box>
       </Grid>

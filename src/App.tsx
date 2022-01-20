@@ -2,6 +2,7 @@ import "./App.css";
 import Home from "./pages/home/Home";
 import Navbar from "./components/static/navbar/Navbar";
 import Footer from "./components/static/footer/Footer";
+import RegisterUser from "./pages/registerUser/RegisterUser";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./pages/login/Login";
 
@@ -19,6 +20,10 @@ function App() {
           </Route>
           <Route path="/home">
             <Home />
+          </Route>
+
+          <Route path="/cadastrousuario">
+            <RegisterUser />
           </Route>
         </div>
       </Switch>
