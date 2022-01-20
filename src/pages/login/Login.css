@@ -14,3 +14,13 @@
 .text-decorator-none{
     text-decoration: none;
 }
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline{
+	border-color: #FDBB30 !important; 
+}
+
+ .MuiFormLabel-root.Mui-focused {
+    color: black !important;
+}
+
+

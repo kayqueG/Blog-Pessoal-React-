@@ -8,8 +8,7 @@ function Navbar() {
     <>
       <AppBar
         position="static"
-        color="primary"
-        style={{ background: "#FDBB30" }}
+       className="appbar"
       >
         <Toolbar variant="dense">
           <Box className="cursor">
