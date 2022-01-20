@@ -58,7 +58,7 @@ function Login() {
               value={userLogin.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="usuario"
-              label="usuário"
+              label="email"
               variant="outlined"
               name="usuario"
               margin="normal"

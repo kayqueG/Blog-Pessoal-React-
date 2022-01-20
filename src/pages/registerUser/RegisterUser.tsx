@@ -12,14 +12,14 @@ function RegisterUser() {
     id: 0,
     nome: "",
     usuario: "",
-    senha: "",
+    senha: ""
   });
 
   const [userResult, setUserResult] = useState<User>({
     id: 0,
     nome: "",
     usuario: "",
-    senha: "",
+    senha: ""
   });
 
   useEffect(() => {
@@ -35,14 +35,14 @@ function RegisterUser() {
   function updatedModel(e: ChangeEvent<HTMLInputElement>) {
     setUser({
       ...user,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   }
   async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (confirmPassword == user.senha) {
+    if(confirmPassword == user.senha) {
       registerUser(`/usuarios/cadastrar`, user, setUserResult);
-      alert("Usuario cadastrado com sucesso");
+      alert("Usuário cadastrado com sucesso");
     } else {
       alert(
         "Dados inconsistentes. Favor verificar as informações de cadastro."
@@ -85,11 +85,12 @@ function RegisterUser() {
               value={user.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
               id="usuario"
-              label="usuário"
+              label="email"
               variant="outlined"
               name="usuario"
               margin="normal"
               fullWidth
+              type="email"
             />
             <TextField
               value={user.senha}
@@ -104,8 +105,8 @@ function RegisterUser() {
             />
             <TextField
               value={confirmPassword}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-              id="confirmPassword"
+              onChange={(e: ChangeEvent<HTMLInputElement>) => confirmPasswordHandle(e)}
+              id="confirmarSenha"
               label="confirmar senha"
               variant="outlined"
               name="confirmarSenha"
