@@ -1,3 +1,21 @@
 .title{
     font-weight: bold;
 }
+
+.cursor{
+    cursor: pointer;
+    color: black;
+}
+
+
+.text-decorator-none{
+    text-decoration: none;
+}
+
+.appbar{
+    background: #FDBB30 !important ;
+}
+
+.text-color{
+    color: white !important;
+}
