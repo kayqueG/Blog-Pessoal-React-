@@ -12,8 +12,9 @@
     text-decoration: none;
 }
 
-.appbar{
-    background: #FDBB30 !important ;
+.appbar-post{
+   color: #041E42 !important ;
+   background-color: #FDBB30 !important;
 }
 
 .text-color{
