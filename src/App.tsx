@@ -5,6 +5,9 @@ import Footer from "./components/static/footer/Footer";
 import RegisterUser from "./pages/registerUser/RegisterUser";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./pages/login/Login";
+import ThemeList from "./components/themes/themelist/ThemeList";
+import PostList from "./components/posts/postlist/PostList"
+
 
 function App() {
   return (
@@ -24,6 +27,12 @@ function App() {
 
           <Route path="/cadastrousuario">
             <RegisterUser />
+          </Route>
+          <Route path="/temas">
+            <ThemeList />
+          </Route>
+          <Route path="/posts">
+            <PostList/>
           </Route>
         </div>
       </Switch>

@@ -1,8 +1,9 @@
-import React from "react";
+import React,{useState} from "react";
 import "./Home.css";
 import { Grid, Paper, Box, Button, Typography,TextField } from "@material-ui/core";
 import Cards from "../../components/cards/Cards";
 import { Link } from "react-router-dom";
+import PostTab from "../../components/posts/posttab/PostTab";
 
 function Home() {
   return (
@@ -47,7 +48,9 @@ function Home() {
         <Grid item xs={5}>
           <img src="https://imgur.com/5tfOCds.png" alt="Lebron James" />
         </Grid>
-        <Grid xs={12} className="posts"></Grid>
+        <Grid xs={12} className="posts">
+          <PostTab/>
+        </Grid>
       </Grid>
     </>
   );
