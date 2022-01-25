@@ -22,7 +22,7 @@ function ThemeList() {
   },[token])
 
   async function getTheme(){
-    await search("/tema",setThemes,{
+    await search("/temas",setThemes,{
       headers: {
         "Authorization": token
       }

@@ -7,6 +7,10 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./pages/login/Login";
 import ThemeList from "./components/themes/themelist/ThemeList";
 import PostList from "./components/posts/postlist/PostList"
+import RegisterTheme from "./components/themes/registerTheme/RegisterTheme";
+import RegisterPost from "./components/posts/registerPost/RegisterPost";
+import DeletePost from "./components/posts/deletePost/DeletePost";
+import DeleteTheme from "./components/themes/deleteTheme/DeleteTheme";
 
 
 function App() {
@@ -33,6 +37,25 @@ function App() {
           </Route>
           <Route path="/posts">
             <PostList/>
+          </Route>
+
+          <Route exact path='/formularioPostagem'>
+            <RegisterPost />
+          </Route>
+          <Route exact path='/formularioPostagem/:id'>
+            <RegisterPost />
+          </Route>
+          <Route exact path='/formularioTema'>
+            <RegisterTheme />
+          </Route>
+          <Route exact path='/formularioTema/:id'>
+            <RegisterTheme />
+          </Route>
+          <Route path='/deletarPostagem/:id'>
+            <DeletePost />
+          </Route>
+          <Route path='/deletarTema/:id'>
+            <DeleteTheme />
           </Route>
         </div>
       </Switch>
