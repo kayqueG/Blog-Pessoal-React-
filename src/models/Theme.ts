@@ -1,6 +1,6 @@
-interface Theme{
+interface Subject{
     id: number;
     descricao:string;
 }
 
-export default Theme;
+export default Subject;
