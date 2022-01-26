@@ -37,7 +37,7 @@ function ThemeList() {
       <>
       {
         themes.map(theme=>(
-        <Box m={2} >
+        <Box m={2}  >
           <Card variant="outlined">
             <CardContent>
               <Typography color="textSecondary" gutterBottom>
@@ -48,18 +48,20 @@ function ThemeList() {
               </Typography>
             </CardContent>
             <CardActions>
-              <Box display="flex" justifyContent="center" mb={1.5} >
+              <Box display="flex" justifyContent="center" mb={1.5}
+               >
   
                 <Link to={`formularioTema/${theme.id}`} className="text-decorator-none">
                   <Box mx={1}>
-                    <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                    <Button variant="contained" className="marginLeft button" size='small' color="primary" >
                       atualizar
                     </Button>
                   </Box>
                 </Link>
                 <Link to={`deletarTema/${theme.id}`} className="text-decorator-none">
                   <Box mx={1}>
-                    <Button variant="contained" size='small' color="secondary">
+                    <Button variant="contained" size='small' color="secondary"
+                    className="btnCancel">
                       deletar
                     </Button>
                   </Box>

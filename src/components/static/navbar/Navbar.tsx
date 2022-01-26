@@ -29,7 +29,7 @@ function Navbar() {
             </Typography>
           </Box>
 
-          <Box width="100%" display="flex" justifyContent="space-between">
+          <Box width="100%" display="flex" justifyContent="end">
             <Box></Box>
             <Box display="flex" position="relative">
               <Link to="/home" className="text-decorator-none">

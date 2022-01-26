@@ -59,7 +59,7 @@ function RegisterUser() {
     >
       <Grid item xs={6} className="img2"></Grid>
       <Grid item xs={6} alignItems="center">
-        <Box paddingX={10} marginTop={15}>
+        <Box paddingX={15} marginTop={15}>
           <form onSubmit={onSubmit}>
             <Typography
               variant="h3"

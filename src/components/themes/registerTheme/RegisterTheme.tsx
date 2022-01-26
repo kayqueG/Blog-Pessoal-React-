@@ -75,11 +75,11 @@ function RegisterTheme() {
     }
 
     return (
-        <Container maxWidth="sm" className="topo">
+        <Container maxWidth="sm" className="top">
             <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro tema</Typography>
+                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Cadastro de tema</Typography>
                 <TextField value={theme.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTheme(e)} id="descricao" label="descricao" variant="outlined" name="descricao" margin="normal" fullWidth />
-                <Button type="submit" variant="contained" color="primary">
+                <Button type="submit" variant="contained" className="button">
                     Finalizar
                 </Button>
             </form>

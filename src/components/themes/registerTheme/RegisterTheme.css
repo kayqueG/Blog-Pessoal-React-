@@ -1,4 +1,11 @@
 
 .top{
     margin-top: 20px;
+    padding-top: 100px;
 }
+
+.button{
+    background-color: #FDBB30 !important;
+    color: black !important;
+    border-color: white ;
+ }

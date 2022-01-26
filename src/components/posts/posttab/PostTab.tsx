@@ -14,7 +14,7 @@ function PostTab() {
     <>
       <TabContext value={value}>
         <AppBar position="static" className="appbar-post">
-          <Tabs centered indicatorColor="secondary" onChange={handleChange} className='cursor'>
+          <Tabs centered indicatorColor="secondary" onChange={handleChange} className='cursor '>
             <Tab label="Todas as postagens" value="1"/>
             <Tab label="Sobre-nós" value="2" />
           </Tabs>

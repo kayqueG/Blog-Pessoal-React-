@@ -31,8 +31,7 @@ function RegisterPost() {
         id: 0,
         titulo: '',
         texto: '',
-        tema: null,
-
+        tema: null
     })
 
     useEffect(() => {
@@ -77,7 +76,6 @@ function RegisterPost() {
 
     async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        console.log("post " + JSON.stringify(post))
 
 
         if (id !== undefined) {
@@ -86,13 +84,16 @@ function RegisterPost() {
                     'Authorization': token
                 }
             })
+            
             alert('Postagem atualizada com sucesso');
+
         } else {
             post_method(`/postagens`, post, setPost, {
                 headers: {
                     'Authorization': token
                 }
             })
+            console.log("postagem " + JSON.stringify(post))
             alert('Postagem cadastrada com sucesso');
         }
         back()
@@ -106,7 +107,7 @@ function RegisterPost() {
     return (
         <Container maxWidth="sm" className="top">
             <form  onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro postagem</Typography>
+                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Cadastro  de postagem</Typography>
                 <TextField
                     value={post.titulo}
                     onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPost(e)}
@@ -134,7 +135,8 @@ function RegisterPost() {
 
                     </Select>
                     <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-                    <Button type="submit" variant="contained" color="primary">
+                    <Button type="submit" variant="contained" color="primary"
+                    className='button'>
                         Finalizar
                     </Button>
                 </FormControl>

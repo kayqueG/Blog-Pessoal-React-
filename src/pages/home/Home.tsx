@@ -30,7 +30,7 @@ function Home() {
         alignItems="center"
         className="box"
       >
-        <Grid alignItems="center" item xs={7}>
+        <Grid alignItems="center" item xs={6}>
           <Box paddingX={20}>
             <Typography
               variant="h3"
@@ -62,7 +62,7 @@ function Home() {
             </Button>
           </Box>
         </Grid>
-        <Grid item xs={5}>
+        <Grid item xs={6}>
           <img src="https://imgur.com/5tfOCds.png" alt="Lebron James" />
         </Grid>
         <Grid xs={12} className="posts">

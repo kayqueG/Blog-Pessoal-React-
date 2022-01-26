@@ -69,7 +69,8 @@ function PostList() {
                   </Link>
                   <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
                     <Box mx={1}>
-                      <Button variant="contained" size='small' color="secondary">
+                      <Button variant="contained" size='small' color="secondary"
+                      className='btnCancel'>
                         deletar
                       </Button>
                     </Box>
