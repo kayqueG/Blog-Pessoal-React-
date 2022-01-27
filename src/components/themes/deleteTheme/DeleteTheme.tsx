@@ -78,22 +78,19 @@ function DeleteTheme(){
               <CardContent>
                 <Box justifyContent="center">
                   <Typography color="textSecondary" gutterBottom>
-                    Deseja deletar o Tema:
-                  </Typography>
-                  <Typography color="textSecondary">
-                   {theme?.descricao}
+                   Tem certeza que deseja deletar o tema  {theme?.descricao}  ?
                   </Typography>
                 </Box>
               </CardContent>
               <CardActions>
                 <Box display="flex" justifyContent="start" ml={1.0} mb={2} >
                   <Box mx={2}>
-                    <Button onClick={yes} variant="contained" className="marginLeft" size='large' color="primary">
+                    <Button onClick={yes} variant="contained" className="marginLeft button" size='large' color="primary">
                       Sim
                     </Button>
                   </Box>
                   <Box mx={2}>
-                    <Button onClick={no} variant="contained" size='large' color="secondary">
+                    <Button onClick={no} variant="contained" size='large' color="secondary" className='btnCancel'>
                       Não
                     </Button>
                   </Box>
