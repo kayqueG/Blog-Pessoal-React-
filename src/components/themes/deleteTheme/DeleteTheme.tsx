@@ -2,15 +2,18 @@ import React, { ChangeEvent, useEffect, useState } from 'react'
 import {Box, Card, CardActions, CardContent, Button, Typography} from '@material-ui/core';
 import './DeleteTheme.css';
 import { useHistory, useParams } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
-import { deleteId, post, put, searchId } from '../../../services/Service';
+import { deleteId, searchId } from '../../../services/Service';
 import Theme from '../../../models/Theme';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 import {toast} from "react-toastify"
 
 function DeleteTheme(){
     let history = useHistory();
     const { id } = useParams<{ id: string }>();
-    const [token, setToken] = useLocalStorage("token");
+    const token = useSelector<TokenState,TokenState["tokens"]>(
+      (state)=> state.tokens
+    );
 
     const [theme, setTheme] = useState<Theme>()
 
