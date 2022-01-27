@@ -7,11 +7,12 @@ import UserLogin from "../../models/UserLogin";
 import "./Login.css";
 import { useDispatch } from "react-redux";
 import { addToken } from "../../store/tokens/actions";
+import { toast } from "react-toastify"
 
 
 function Login() {
   let history = useHistory();
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
   const [token, setToken] = useState("");
 
   const [userLogin, setUserLogin] = useState<UserLogin>({
@@ -39,9 +40,29 @@ function Login() {
     e.preventDefault();
     try {
       await login(`/usuarios/logar`, userLogin, setToken);
-      alert("usuario logado com sucesso!");
+
+      toast.success("Usuário logado com sucesso", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined
+      });
     } catch (error) {
-      alert("Dados dos usuário inconsistentes. Erro ao logar!");
+
+      toast.error("Dados dos usuário inconsistentes. Erro ao logar!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined
+      });
     }
   }
 
@@ -107,7 +128,7 @@ function Login() {
         </Box>
       </Grid>
       <Grid xs={6} className="img">
-        
+
       </Grid>
     </Grid>
   );

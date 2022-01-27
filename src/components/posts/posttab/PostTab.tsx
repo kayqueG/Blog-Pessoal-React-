@@ -20,7 +20,9 @@ function PostTab() {
           </Tabs>
         </AppBar>
         <TabPanel value="1" >
-          <Box display="flex" flexWrap="wrap" justifyContent="center" >
+          <Box display="flex" flexWrap="wrap" justifyContent="center" 
+            className="postlist-background"
+          >
             <PostList />
           </Box>
         </TabPanel>

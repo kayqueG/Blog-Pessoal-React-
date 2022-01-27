@@ -5,8 +5,7 @@ import { useHistory, useParams } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import { deleteId, post, put, searchId } from '../../../services/Service';
 import Theme from '../../../models/Theme';
-
-
+import {toast} from "react-toastify"
 
 function DeleteTheme(){
     let history = useHistory();
@@ -17,7 +16,16 @@ function DeleteTheme(){
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+          toast.error("Você precisa estar logado",{
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false, 
+            theme: "colored",
+            progress: undefined
+          });
             history.push("/login")
         }
     }, [token])
@@ -43,7 +51,17 @@ function DeleteTheme(){
             'Authorization': token
           }
         });
-        alert('Tema deletado com sucesso');
+        toast.success("Tema deletado com sucesso",{
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: false,
+          draggable: false, 
+          theme: "colored",
+          progress: undefined
+        });
+        ;
       }
     
       function no() {

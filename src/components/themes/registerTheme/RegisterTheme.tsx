@@ -2,15 +2,19 @@ import React, { useState, useEffect, ChangeEvent } from "react";
 import { Container, Typography, TextField, Button } from "@material-ui/core";
 import Theme from "../../../models/Theme";
 import { useHistory, useParams } from "react-router-dom";
-import useLocalStorage from "react-use-localstorage";
 import { post, put, searchId } from "../../../services/Service";
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
+import {toast} from "react-toastify"
 
 
 function RegisterTheme() {
 
     let history = useHistory();
     const { id } = useParams<{ id: string }>();
-    const [token, setToken] = useLocalStorage("token");
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+      );
 
     const [theme, setTheme] = useState<Theme>({
         id: 0,
@@ -20,7 +24,16 @@ function RegisterTheme() {
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            toast.error("Você precisa estar logado",{
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false, 
+                theme: "colored",
+                progress: undefined
+              });
             history.push("/login")
         }
     }, [token])
@@ -57,14 +70,32 @@ function RegisterTheme() {
                     'Authorization': token
                 }
             })
-            alert('Tema atualizado com sucesso');
+            toast.success("Tema atualizado com sucesso",{
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false, 
+                theme: "colored",
+                progress: undefined
+              });
         } else {
             post(`/temas`, theme,setTheme, {
                 headers: {
                     'Authorization': token
                 }
             })
-            alert('Tema cadastrado com sucesso');
+            toast.success("Tema cadastrado com sucesso",{
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false, 
+                theme: "colored",
+                progress: undefined
+              });
         }
         back()
 

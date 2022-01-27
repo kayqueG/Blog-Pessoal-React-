@@ -8,19 +8,29 @@ import { post as post_method, put, search, searchId } from '../../../services/Se
 import Post from '../../../models/Post';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import {toast} from "react-toastify"
 
 
 function RegisterPost() {
     let history = useHistory();
     const { id } = useParams<{ id: string }>();
     const [themes, setThemes] = useState<Theme[]>([])
-    const token = useSelector<TokenState,TokenState["tokens"]>(
-        (state)=> state.tokens
-      );
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+    );
 
     useEffect(() => {
         if (token == "") {
-            alert("Você precisa estar logado")
+            toast.error("Você precisa estar logado", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined
+            });
             history.push("/login")
 
         }
@@ -88,8 +98,17 @@ function RegisterPost() {
                     'Authorization': token
                 }
             })
-            
-            alert('Postagem atualizada com sucesso');
+
+            toast.success("Postagem atualizada com sucesso", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined
+            });
 
         } else {
             post_method(`/postagens`, post, setPost, {
@@ -97,8 +116,17 @@ function RegisterPost() {
                     'Authorization': token
                 }
             })
-            console.log("postagem " + JSON.stringify(post))
-            alert('Postagem cadastrada com sucesso');
+
+            toast.success("Postagem cadastrada com sucesso", {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined
+            });
         }
         back()
 
@@ -110,7 +138,7 @@ function RegisterPost() {
 
     return (
         <Container maxWidth="sm" className="top">
-            <form  onSubmit={onSubmit}>
+            <form onSubmit={onSubmit}>
                 <Typography variant="h3" color="textSecondary" component="h1" align="center" >Cadastro  de postagem</Typography>
                 <TextField
                     value={post.titulo}
@@ -140,7 +168,7 @@ function RegisterPost() {
                     </Select>
                     <FormHelperText>Escolha um tema para a postagem</FormHelperText>
                     <Button type="submit" variant="contained" color="primary"
-                    className='button'>
+                        className='button'>
                         Finalizar
                     </Button>
                 </FormControl>
