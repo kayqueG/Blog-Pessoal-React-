@@ -13,7 +13,7 @@ function Login() {
   let history = useHistory();
   const dispatch=useDispatch();
   const [token, setToken] = useState("");
-  
+
   const [userLogin, setUserLogin] = useState<UserLogin>({
     id: 0,
     usuario: "",
@@ -93,7 +93,7 @@ function Login() {
                 Não tem uma conta?
               </Typography>
             </Box>
-            <Link to="/cadastrousuario">
+            <Link to="/cadastrousuario" className="text-decorator-none">
               <Typography
                 variant="subtitle1"
                 gutterBottom

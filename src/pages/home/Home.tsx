@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./Home.css";
 import { Grid, Box, Button, Typography } from "@material-ui/core";
-import {useHistory } from "react-router-dom";
+import { useHistory,Link} from "react-router-dom";
 import PostTab from "../../components/posts/posttab/PostTab";
 import ModalPost from "../../components/posts/modalPost/ModalPost";
 import { useSelector } from "react-redux";
@@ -11,9 +11,9 @@ function Home() {
 
 
   let history = useHistory();
- const token = useSelector<TokenState,TokenState["tokens"]>(
-   (state)=> state.tokens
- );
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
 
   useEffect(() => {
     if (token == "") {
@@ -33,7 +33,7 @@ function Home() {
         className="box"
       >
         <Grid alignItems="center" item xs={6}>
-          <Box paddingX={20}>
+          <Box paddingX={10}>
             <Typography
               variant="h3"
               gutterBottom
@@ -59,13 +59,16 @@ function Home() {
             <Box marginRight={1}>
               <ModalPost />
             </Box>
-            <Button variant="contained" className="button">
-              Ver Postagens
-            </Button>
+            <Link to="/posts" className="text-decorator-none">
+              <Button variant="contained" className="button">
+                Ver Postagens
+              </Button>
+            </Link>
+
           </Box>
         </Grid>
         <Grid item xs={6}>
-          <img src="https://i.imgur.com/u3ItEzu.png" alt="" width="400px" height="400px"  />
+          <img src="https://i.imgur.com/u3ItEzu.png" alt="" width="400px" height="400px" />
         </Grid>
         <Grid xs={12} className="posts">
           <PostTab />
