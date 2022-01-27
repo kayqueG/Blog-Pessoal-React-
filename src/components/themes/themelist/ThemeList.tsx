@@ -5,15 +5,18 @@ import Theme from "../../../models/Theme";
 import "./ThemeList.css";
 import useLocalStorage from "react-use-localstorage";
 import { search } from "../../../services/Service";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../../store/tokens/tokensReducer";
 
 
 function ThemeList() {
 
   const [themes,setThemes] = useState<Theme[]>([]);
-  const[token,setToken]= useLocalStorage("token");
   let history = useHistory();
-
-
+  const token = useSelector<TokenState,TokenState["tokens"]>(
+    (state)=> state.tokens
+  );
+  
   useEffect(()=>{
     if(token==""){
       alert("Você precisa estar logado!")

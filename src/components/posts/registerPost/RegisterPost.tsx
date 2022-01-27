@@ -6,13 +6,17 @@ import useLocalStorage from 'react-use-localstorage';
 import Theme from '../../../models/Theme';
 import { post as post_method, put, search, searchId } from '../../../services/Service';
 import Post from '../../../models/Post';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 
 function RegisterPost() {
     let history = useHistory();
     const { id } = useParams<{ id: string }>();
     const [themes, setThemes] = useState<Theme[]>([])
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState,TokenState["tokens"]>(
+        (state)=> state.tokens
+      );
 
     useEffect(() => {
         if (token == "") {

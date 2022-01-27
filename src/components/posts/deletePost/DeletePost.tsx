@@ -5,13 +5,16 @@ import { useHistory, useParams } from 'react-router-dom';
 import Post from '../../../models/Post';
 import useLocalStorage from 'react-use-localstorage';
 import { deleteId, searchId } from '../../../services/Service';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function DeletePost() {
 
   let history = useHistory();
   const { id } = useParams<{ id: string }>();
-  const [token, setToken] = useLocalStorage("token");
-
+  const token = useSelector<TokenState,TokenState["tokens"]>(
+    (state)=> state.tokens
+  );
   const [post, setPosts] = useState<Post>()
 
   useEffect(() => {

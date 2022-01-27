@@ -11,56 +11,61 @@ import RegisterTheme from "./components/themes/registerTheme/RegisterTheme";
 import RegisterPost from "./components/posts/registerPost/RegisterPost";
 import DeletePost from "./components/posts/deletePost/DeletePost";
 import DeleteTheme from "./components/themes/deleteTheme/DeleteTheme";
+import { Provider } from "react-redux";
+import store from "./store/store";
 
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <Switch>
-        <div style={{ minHeight: "100vh" }}>
-          <Route exact path="/">
-            <Login />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-          <Route path="/home">
-            <Home />
-          </Route>
+    <Provider store={store}>
+      <Router>
+        <Navbar />
+        <Switch>
+          <div style={{ minHeight: "100vh" }}>
+            <Route exact path="/">
+              <Login />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+            <Route path="/home">
+              <Home />
+            </Route>
 
-          <Route path="/cadastrousuario">
-            <RegisterUser />
-          </Route>
-          <Route path="/temas">
-            <ThemeList />
-          </Route>
-          <Route path="/posts">
-            <PostList/>
-          </Route>
+            <Route path="/cadastrousuario">
+              <RegisterUser />
+            </Route>
+            <Route path="/temas">
+              <ThemeList />
+            </Route>
+            <Route path="/posts">
+              <PostList />
+            </Route>
 
-          <Route exact path='/formularioPostagem'>
-            <RegisterPost />
-          </Route>
-          <Route exact path='/formularioPostagem/:id'>
-            <RegisterPost />
-          </Route>
-          <Route exact path='/formularioTema'>
-            <RegisterTheme />
-          </Route>
-          <Route exact path='/formularioTema/:id'>
-            <RegisterTheme />
-          </Route>
-          <Route path='/deletarPostagem/:id'>
-            <DeletePost />
-          </Route>
-          <Route path='/deletarTema/:id'>
-            <DeleteTheme />
-          </Route>
-        </div>
-      </Switch>
-      <Footer />
-    </Router>
+            <Route exact path='/formularioPostagem'>
+              <RegisterPost />
+            </Route>
+            <Route exact path='/formularioPostagem/:id'>
+              <RegisterPost />
+            </Route>
+            <Route exact path='/formularioTema'>
+              <RegisterTheme />
+            </Route>
+            <Route exact path='/formularioTema/:id'>
+              <RegisterTheme />
+            </Route>
+            <Route path='/deletarPostagem/:id'>
+              <DeletePost />
+            </Route>
+            <Route path='/deletarTema/:id'>
+              <DeleteTheme />
+            </Route>
+          </div>
+        </Switch>
+        <Footer />
+      </Router>
+    </Provider>
+
   );
 }
 

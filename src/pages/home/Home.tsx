@@ -1,17 +1,19 @@
-import React, { useState,useEffect } from "react";
+import React, { useEffect } from "react";
 import "./Home.css";
-import { Grid, Paper, Box, Button, Typography, TextField } from "@material-ui/core";
-import Cards from "../../components/cards/Cards";
-import { Link, useHistory } from "react-router-dom";
+import { Grid, Box, Button, Typography } from "@material-ui/core";
+import {useHistory } from "react-router-dom";
 import PostTab from "../../components/posts/posttab/PostTab";
 import ModalPost from "../../components/posts/modalPost/ModalPost";
-import useLocalStorage from "react-use-localstorage";
+import { useSelector } from "react-redux";
+import { TokenState } from "../../store/tokens/tokensReducer";
 
 function Home() {
 
 
   let history = useHistory();
-  const [token, setToken] = useLocalStorage('token');
+ const token = useSelector<TokenState,TokenState["tokens"]>(
+   (state)=> state.tokens
+ );
 
   useEffect(() => {
     if (token == "") {
@@ -63,7 +65,7 @@ function Home() {
           </Box>
         </Grid>
         <Grid item xs={6}>
-          <img src="https://imgur.com/5tfOCds.png" alt="Lebron James" />
+          <img src="https://i.imgur.com/u3ItEzu.png" alt="" width="400px" height="400px"  />
         </Grid>
         <Grid xs={12} className="posts">
           <PostTab />
